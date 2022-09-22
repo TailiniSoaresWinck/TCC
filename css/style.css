@@ -1,0 +1,38 @@
+
+/**{
+    margin:0;
+    padding: 0;
+}
+header{
+    background-color: #2062AD;
+    width: 100vw;
+    display: inline-flex;
+}
+#divImg{
+    padding:2vw;
+    width: 20vw;
+}
+#logo{
+    width: 100%;
+}
+#divTitulo{
+    padding: 2vw;
+    width: 60vw;
+    text-align: center;
+}
+#titulo{
+    color: #FFF;
+    font-size: 3vh;
+}
+footer{
+    padding: 10vw;
+    height: 15vh;
+    background-color: #c0c0c0;
+    text-align: center;
+}
+#fp{
+    font-size: 2vh;
+    font-weight: 500;
+}   */
+
+
