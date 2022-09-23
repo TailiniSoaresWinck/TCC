@@ -1,5 +1,15 @@
 use projeto;
-
+CREATE TABLE administrador(
+	id int not null auto_increment primary key,
+    nome varchar(100),
+    email varchar(100),
+    senha varchar(50),
+    cod_acesso char(8) not null
+);
+CREATE TABLE cod_acesso(
+	id int not null auto_increment primary key,
+    codigo char(8) not null 
+);
 CREATE TABLE curso(
 	id int not null auto_increment primary key,
     nome varchar(20)
