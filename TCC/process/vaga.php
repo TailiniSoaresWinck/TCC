@@ -14,7 +14,9 @@ else if($metodo==="POST"){
 
     if($type==="cadastrar_vaga"){
         if(empty($_POST['titulo'] && $_POST['cargo'] && $_POST['descricao'] && $_POST['beneficio'] && $_POST['exigencia'])){
-            echo "Preencha todos os campos";
+            $_SESSION['msg']='Preencha todos os campos';
+            $_SESSION['type']='warning';
+            header('Location:../views/criarVaga.php');
         }
         else{
             $titulo = $_POST['titulo'];
@@ -35,17 +37,19 @@ else if($metodo==="POST"){
             )");
 
             if($cadastraVaga==true){
-            echo "Houve o cadastro";
+            header('Location:../views/listaVagas.php');
             }
             else{
-            echo "Não foi possível cadastrar";
+                $_SESSION['msg']='Não foi possível cadastrar';
+                $_SESSION['type']='warning';
+            header('Location:../views/criarVaga.php');
             }
                 
         }
     }
     else if($type==="edita_vaga"){
         if(empty($_POST['finalizar'] && $_POST['id'])){
-            echo "Preencha todos os campos";
+           
         }
         else{
             $finalizado=$_POST['finalizar'];
@@ -54,10 +58,12 @@ else if($metodo==="POST"){
             $editaVaga = $conn->query("UPDATE projeto.vaga SET finalizado=".$finalizado." WHERE id=".$id."");
 
             if($editaVaga==true){
-            echo "Houve a edição";
+                header('Location:../views/listaVagas.php');
             }
             else{
-            echo "Não foi possível editar";
+                $_SESSION['msg']='Não foi possível finalizar';
+                $_SESSION['type']='warning';
+                header('Location:../views/criarVaga.php');
             }
                 
         }

@@ -41,7 +41,8 @@ if($metodo==="POST"){
                     )");
 
                     if($cadastraEmp==true){
-                        //cadastro deu certo
+                        $_SESSION["msg"]="Cadastro realizado com sucesso!";
+                        $_SESSION["status"]="success";
                         header('Location:../views/login.php');
                     }
                     else{
@@ -55,7 +56,8 @@ if($metodo==="POST"){
     }
     else if($type==="login_emp"){
         if(empty($_POST['email'] && MD5($_POST['senha']))){
-            //nao preencheu todos os campos";
+            $_SESSION["msg"]="Preencha todos os campos!";
+            $_SESSION["status"]="warning";
             header('Location:../views/login.php');
         }
         else{
@@ -65,7 +67,8 @@ if($metodo==="POST"){
             $verificaQuery = $conn->query("SELECT e.email, e.senha FROM  projeto.empresa e WHERE e.email='".$email."' AND e.senha='".$senha."'");
 
             if($verificaQuery->rowCount()<1){
-                //nao deu certo login
+                $_SESSION["msg"]="Senha ou email inválidos!";
+                $_SESSION["status"]="warning";
                 header('Location:../views/login.php');
             }
             else if($verificaQuery->rowCount()>0){
@@ -74,7 +77,6 @@ if($metodo==="POST"){
                 $dados = $sql->fetchAll(PDO::FETCH_COLUMN, 0);
                 $empresa_id=$dados[0];
                 $_SESSION['empresa_id']=$empresa_id;
-                //deu certo
                header('Location:../views/buscaCurriculo.php');
             }
         }

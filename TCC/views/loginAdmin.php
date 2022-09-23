@@ -33,8 +33,8 @@ if(isset($_SESSION["msg"])){
 <div class="container login-container">
             <div class="row">
                 <div class="col-md-6 login-form-1">
-                    <h3>Empresa</h3>
-                    <form action="../process/empresa.php" method="POST">
+                    <h3>Administrador</h3>
+                    <form action="../process/administrador.php" method="POST">
                         <div class="form-group">
                             <input type="text" class="form-control"  name="email" placeholder="Email" value="" />
                         </div>
@@ -42,36 +42,16 @@ if(isset($_SESSION["msg"])){
                             <input type="password" class="form-control" name="senha" placeholder="Senha *" value="" />
                         </div>
                         <div class="form-group">
-                            <input type="hidden" name="type" value="login_emp">
+                            <input type="hidden" name="type" value="login_admin">
                             <input type="submit" class="btnSubmit" value="Login" />
                         </div>
                         <div class="form-group">
-                            <a href="cadastro.php" class="SRegistro">Não tem cadastro?</a>
+                            <a href="cadastroAdmin.php" class="SRegistro">Não tem cadastro?</a>
+                        </div>
+                        <div class="form-group">
+                            <a href="login.php" class="SRegistro">Voltar</a>
                         </div>
                     </form>
                 </div>
-                <div class="col-md-6 login-form-2">
-                    <h3>Aluno</h3>
-                    <form action="../process/aluno.php" method="POST">
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="email" placeholder="Email" value="" />
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" name="senha" placeholder="Senha *" value="" />
-                        </div>
-                        <div class="form-group">
-                            <input type="hidden" name="type" value="login_aluno">  
-                            <input type="submit" class="btnSubmit" value="Login" />
-                        </div>
-                        <div class="form-group">
-                            <a href="cadastro.php" class="SRegistro" value="Login">Não tem cadastro?</a>
-                        </div>
-                    </form>
-                </div>
-                <div class='outro'>
-                <a id='link-outro' href="../views/loginAdmin.php">Outro</a>
-                </div>
-            </div>
-        </div>
 </body>
 </html>

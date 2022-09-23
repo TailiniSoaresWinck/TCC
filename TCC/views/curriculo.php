@@ -3,7 +3,7 @@ include_once('../config.php');
 include_once('../process/curriculo.php');
 
 $curriculo_id=$_SESSION['curriculo_id'];
-include_once('../template/cabecalhoAluno.php');
+include_once('../template/cabecalhoEmp.php');
 ?>
 <html lang="pt-BR">
     <meta charset="UTF-8">
@@ -88,10 +88,7 @@ include_once('../template/cabecalhoAluno.php');
                 <label for="">Data de Conclusão:</label>
                 <h3><?=$row_curriculo['data'];?></h3>
             </div>
-        </div>
-        <div class="btn">
-            <a href="editaCurriculo.php?id=<?=$curriculo_id?>">Editar Currículo</a>
-        </div>
+    </div>
         </div>
     <?php 
     }else{?>

@@ -1,37 +1,72 @@
 <?php
-if(empty($_SESSION['empresa_id'])){
-    header('Location:../views/unset.php');
-}
     include_once('../config.php');
     include_once('../process/vaga.php');
     $id= filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
     $_SESSION['idVaga']=$id;
 
-    include_once('../templates/cabecalho.php');
+    include_once('../template/cabecalhoEmp.php');
 ?>
 
 <html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/detalhes.css">
+    </head>
 <body>
-    <a href='listaVagas.php'>Voltar</a>
-    <h1>Detalhes da Vaga</h1>
+    <div class="detalhes">
+        <h5>Detalhes da Vaga</h5>
+    </div>
+    
     <?php
     if(!empty($id)){
-        $queryVaga = "SELECT v.id, v.titulo, v.cargo, v.descricao, v.beneficio, v.exigencia FROM projeto.vaga v WHERE v.id=:id LIMIT 1";
+        $queryVaga = "SELECT v.id, v.titulo, v.cargo, v.descricao, v.beneficio, v.exigencia, v.empresa_id, e.nome, e.email FROM projeto.vaga v
+        inner join projeto.empresa as e
+        on e.id=v.empresa_id
+         WHERE v.id=:id LIMIT 1";
         $result_vaga = $conn->prepare($queryVaga);
         $result_vaga->bindParam(':id', $id);
         $result_vaga->execute();
         $row_vaga=$result_vaga->fetch(PDO::FETCH_ASSOC)?>
+        <div class="vaga">
+            <div class="titulo">
             <h3><?=$row_vaga['titulo'];?></h3>
-            <p><?=$row_vaga['cargo'];?></p>
+            </div> 
+           <div class="cargo">
+            <label for="">Empresa:</label>
+           <h5><?=$row_vaga['nome'];?></h5>
+            <label for="">Email:</label>
+           <h5><?=$row_vaga['email'];?></h5>
+           </div>
+           <div class="cargo">
+            <label for="">Cargo:</label>
+           <h5><?=$row_vaga['cargo'];?></h5>
+           </div>
+            <div class="descricao">
+            <label for="">Descrição:</label>
             <p><?=$row_vaga['descricao'];?></p>
+            </div>
+            <div class="beneficio">
+            <label for="">Benefícios:</label>
             <p><?=$row_vaga['beneficio'];?></p>
+            </div>
+            <div class="exigencia">
+            <label for="">Exigências:</label>
             <p><?=$row_vaga['exigencia'];?></p>
-            <form action="../process/vaga.php" method="POST">
+            </div>
+        </div>
+        <div class="form-editar">
+        <form action="../process/vaga.php" method="POST">
             <input type="hidden" name="id" value="<?=$row_vaga['id'];?>"> 
             <input type="hidden" name="type" value="edita_vaga">  
             <input type="hidden" name="finalizar" value="1"> 
-            <button type="submit" class="button is-block is-link is-large is-fullwidth">Finalizar</button> 
+            <div class="btn-editar">
+            <button type="submit" class="btn">Finalizar</button> 
+            </div>
             </form>
+        </div>
+            
             <?php
             $query=$conn->prepare("SELECT * FROM projeto.historico_vaga as h WHERE h.vaga_id=:id");
             $query->bindParam(':id', $id);
@@ -61,7 +96,12 @@ if(empty($_SESSION['empresa_id'])){
             <?php
             }
             else{
-                echo "Nenhum candidato a vaga ainda";
+            ?>
+            <div class="sem-candidatos">
+            <h3>Nenhum candidato ainda!<h3>
+            </div>
+            
+            <?php
             }
             ?>
             
@@ -72,3 +112,6 @@ if(empty($_SESSION['empresa_id'])){
     ?>
 </body>
 </html>
+<?php
+
+include_once('../template/footer.php');

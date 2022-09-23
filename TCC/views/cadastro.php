@@ -7,7 +7,7 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="../template/css/login.css">
+    <link rel="stylesheet" href="../css/login.css">
     <title>Cadastro</title>
 </head>
 <body>
@@ -60,6 +60,9 @@
                             <a href="login.php" class="SRegistro" value="Login">Já tem cadastro?</a>
                         </div>
                     </form>
+                </div>
+                <div class='outro'>
+                <a id='link-outro' href="../views/loginAdmin.php">Outro</a>
                 </div>
             </div>
         </div>

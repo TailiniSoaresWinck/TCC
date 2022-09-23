@@ -13,7 +13,9 @@ if($metodo==="POST"){
     if($type==="cadastrar_aluno"){
         if(empty($_POST['nome'] && $_POST['email'] && $_POST['matricula'] && MD5($_POST['senha']))){
 
-            echo 'preencha todos os campos';
+            $_SESSION["msg"]="Preencha todos os campos!";
+            $_SESSION["status"]="warning";
+            header('Location:../views/cadastro.php');
             
         
         }else{
@@ -31,7 +33,9 @@ if($metodo==="POST"){
                 
             if($verificaQuery -> rowCount()>0){
                 
-                echo "aluno já cadastrado";
+                $_SESSION["msg"]="Já existe este cadastro!";
+                $_SESSION["status"]="warning";
+                header('Location:../views/cadastro.php');
             }
             else{
                 $cadastraAluno = $conn->query("INSERT INTO projeto.aluno(nome, email, senha, codmatricula) VALUES (
@@ -42,21 +46,29 @@ if($metodo==="POST"){
                     )");
 
                     if($cadastraAluno==true){
-                        echo "Houve o cadastro";
+                        $_SESSION["msg"]="Cadastro realizado com sucesso!";
+                        $_SESSION["status"]="success";
+                        header('Location:../views/login.php');
                     }
                     else{
-                        echo "Não foi possível cadastrar";
+                        $_SESSION["msg"]="Erro! Tente novamente.";
+                        $_SESSION["status"]="warning";
+                        header('Location:../views/cadastro.php');
                     }
                 }
         }
         else{
-            echo 'Código de matricula inválido';
+            $_SESSION["msg"]="Código de matrícula inválido!";
+            $_SESSION["status"]="warning";
+            header('Location:../views/cadastro.php');
         }
     }
     }
     else if($type==="login_aluno"){
         if(empty($_POST['email'] && $_POST['senha'])){
-            echo "Preencha todos os campos";
+            $_SESSION["msg"]="Preencha todos os campos!";
+            $_SESSION["status"]="warning";
+            header('Location:../views/login.php');
         }
         else{
             $email = $_POST['email'];
@@ -65,7 +77,9 @@ if($metodo==="POST"){
             $verificaQuery = $conn->query("SELECT e.email, e.senha FROM  projeto.aluno e WHERE e.email='".$email."' AND e.senha='".$senha."'");
 
             if($verificaQuery->rowCount()<1){
-                echo "Erro ao fazer login";
+                $_SESSION["msg"]="Senha ou email inválidos!";
+                $_SESSION["status"]="warning";
+                header('Location:../views/login.php');
             }
             else if($verificaQuery->rowCount()>0){
                 $sql = $conn->query("SELECT e.id FROM projeto.aluno e WHERE e.email='".$email."' AND e.senha='".$senha."'");
@@ -78,7 +92,9 @@ if($metodo==="POST"){
                 $dados_c=$query->fetchAll(PDO::FETCH_COLUMN, 0);
                 $curriculo_id=$dados_c[0];
                 $_SESSION['curriculo_id']=$curriculo_id;
-                echo "Você fez login";
+                var_dump($_SESSION['curriculo_id']);
+                var_dump($_SESSION['aluno_id']);
+                header('Location:../views/buscaVaga.php');
             }
         }
     }
