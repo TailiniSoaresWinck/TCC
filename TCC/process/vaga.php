@@ -15,8 +15,8 @@ else if($metodo==="POST"){
     if($type==="cadastrar_vaga"){
         if(empty($_POST['titulo'] && $_POST['cargo'] && $_POST['descricao'] && $_POST['beneficio'] && $_POST['exigencia'])){
             $_SESSION['msg']='Preencha todos os campos';
-            $_SESSION['type']='warning';
-            header('Location:../views/criarVaga.php');
+            $_SESSION['type']='warnig';
+            header('Location:../views/criaVaga.php');
         }
         else{
             $titulo = $_POST['titulo'];
@@ -63,7 +63,7 @@ else if($metodo==="POST"){
             else{
                 $_SESSION['msg']='Não foi possível finalizar';
                 $_SESSION['type']='warning';
-                header('Location:../views/criarVaga.php');
+                header('Location:../views/listaVagas.php');
             }
                 
         }

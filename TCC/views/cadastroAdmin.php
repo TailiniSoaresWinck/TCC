@@ -15,12 +15,15 @@
             <div class="row">
                 <div class="col-md-6 login-form-1">
                     <h3>Administrador</h3>
-                    <form action="../process/empresa.php" method="POST">
+                    <form action="../process/administrador.php" method="POST">
                         <div class="form-group">
                             <input type="text" class="form-control"  name="nome" placeholder="Nome" value="" />
                         </div>
                         <div class="form-group">
                             <input type="text" class="form-control"  name="email" placeholder="Email" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control"  name="cod_acesso" placeholder="Código" value="" />
                         </div>
                         <div class="form-group">
                             <input type="password" class="form-control" name="senha" placeholder="Senha *" value="" />

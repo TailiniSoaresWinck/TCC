@@ -7,6 +7,15 @@ $curriculo_id=$_SESSION['curriculo_id'];
 
 $metodo=$_SERVER['REQUEST_METHOD'];
 if($metodo=="POST"){
+    $queryVerifica=$conn->prepare("SELECT * FROM projeto.curriculo as c WHERE c.id=:curriculo_id");
+    $queryVerifica->bindParam(':curriculo_id', $curriculo_id);
+    $queryVerifica->execute();
+    if($queryVerifica->rowCount()<=0){
+        $_SESSION['msg']='Não há nenhum currículo para ser enviado!';
+        $_SESSION['type']='warning';
+        header('Location:../views/buscaVaga.php');
+    }
+    else{
     $vaga_id=$_POST['id'];
     $vaga_id=intval($vaga_id);
 
@@ -14,9 +23,12 @@ if($metodo=="POST"){
     $query->bindParam(':curriculo_id', $curriculo_id);
     $query->bindParam(':vaga_id', $vaga_id);
     $query->execute();
-    echo "Já foi enviado para esta vaga";
-
-    if($query->rowCount()<0){
+    if($query->rowCount()>=1){
+        $_SESSION['msg']='Já foi enviado para esta vaga!';
+        $_SESSION['type']='warning';
+        header('Location:../views/buscaVaga.php');
+    }
+    else{
     $query=$conn->prepare("INSERT INTO projeto.historico_vaga(curriculo_id, aluno_id, vaga_id) VALUES (
         :curriculo_id,
         :aluno_id,
@@ -27,10 +39,14 @@ if($metodo=="POST"){
     $query->bindParam(':vaga_id', $vaga_id);
     $query->execute();
     if($query==true){
-        echo "Inseriu no banco de dados";
+        $_SESSION['msg']='Currículo enviado!';
+        $_SESSION['type']='success';
+        header('Location:../views/buscaVaga.php');
     }
     else{
-        echo "Aconteceu um erro";
+        $_SESSION['msg']='Aconteceu um erro!';
+        $_SESSION['type']='warning';
+        header('Location:../views/buscaVaga.php');
     }
     }
-}
+}}

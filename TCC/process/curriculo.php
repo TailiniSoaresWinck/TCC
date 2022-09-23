@@ -9,7 +9,9 @@ if($metodo==="POST"){
 
     if($type==="cadastrar_curriculo"){
         if(empty($_POST['area_prof'] && $_POST['objetivo'] && $_POST['instituicao'] && $_POST['nivel'] && $_POST['inicio'] && $_POST['fim'] && $_POST['curso'] && $_POST['empresa'] && $_POST['cargo'] && $_POST['admissao'] && $_POST['demissao'] && $_POST['curso_comp'] && $_POST['duracao'] && $_POST['data'] )){
-            echo "Preencha todos os campos";
+            $_SESSION["msg"]="Preencha todos os campos!";
+            $_SESSION["status"]="warning";
+            header('Location:../views/criaCurriculo.php');
         }
         else{
             $area_prof=$_POST['area_prof'];
@@ -31,6 +33,7 @@ if($metodo==="POST"){
 
             if($verificaQuery->rowCount()>0){
                 echo 'Você já tem um currículo cadastrado';
+                header('Location:../views/buscaVaga.php');
             }
             else{
 
@@ -48,7 +51,6 @@ if($metodo==="POST"){
                     $dados = $query->fetchAll(PDO::FETCH_COLUMN, 0);
                     $experiencia_id=$dados[0];
                     $_SESSION['experiencia_id']=$experiencia_id;
-                    echo $experiencia_id."<br>";
                 }
 
             $cadastraFormacao=$conn->query("INSERT INTO projeto.formacao(instituicao,nivel,inicio,fim,curso_id,aluno_id) VALUES (
@@ -66,7 +68,6 @@ if($metodo==="POST"){
                     $dados = $query->fetchAll(PDO::FETCH_COLUMN, 0);
                     $formacao_id=$dados[0];
                     $_SESSION['formacao_id']=$formacao_id;
-                    echo $formacao_id."<br>";
                 }
 
 
@@ -82,7 +83,6 @@ if($metodo==="POST"){
                     $dados = $query->fetchAll(PDO::FETCH_COLUMN, 0);
                     $curso_complementar_id=$dados[0];
                     $_SESSION['curso_complementar_id']=$curso_complementar_id;
-                    echo $curso_complementar_id."<br>";
                 }
             
             
@@ -100,6 +100,7 @@ if($metodo==="POST"){
                         $dados = $query->fetchAll(PDO::FETCH_COLUMN, 0);
                         $curriculo_id=$dados[0];
                         $_SESSION['curriculo_id']=$curriculo_id;
+                        header('Location:../views/buscaVaga.php');
                     }
 
             }
@@ -107,7 +108,8 @@ if($metodo==="POST"){
     }else if($type==="editar_curriculo"){
 
         if(empty($_POST['area_prof'] && $_POST['objetivo'] && $_POST['instituicao'] && $_POST['nivel'] && $_POST['inicio'] && $_POST['fim'] && $_POST['curso'] && $_POST['empresa'] && $_POST['cargo'] && $_POST['admissao'] && $_POST['demissao'] && $_POST['curso_comp'] && $_POST['duracao'] && $_POST['data'] )){
-            echo "Preencha todos os campos";
+            $_SESSION["msg"]="Preencha todos os campos!";
+            $_SESSION["status"]="warning";
         }
         else{
             $area_prof=$_POST['area_prof'];
@@ -131,10 +133,11 @@ if($metodo==="POST"){
             $queryCurriculo=$conn->query("UPDATE projeto.curriculo c SET c.area_profissional='".$area_prof."', c.objetivo='".$objetivo."' WHERE c.aluno_id=".$aluno_id."");
             
             if($queryCurriculo==true && $queryCursoComp==true && $queryExp==true && $queryForm==true){
-                echo 'Curriculo atualizado!';
+                header('Location:../views/buscaVaga.php');
             }
             else{
-                echo "Houve um erro tente novamente";
+                $_SESSION["msg"]="Houve um erro tente novamente!";
+                $_SESSION["status"]="warning";
             }
     }
 }

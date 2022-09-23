@@ -1,22 +1,19 @@
 <?php
 include_once('../config.php');
-if(empty($_POST['titulo_vaga'])){
-    header('Location:../views/buscaVaga.php');
-    exit;
-}
+include_once('../template/cabecalhoAluno.php');
 
-$titulo="%".trim($_POST['titulo_vaga'])."%";
-$query=$conn->prepare("SELECT v.id, v.titulo, v.cargo,v.finalizado, e.nome FROM projeto.vaga as v
-inner join projeto.empresa as e
-on e.id=v.empresa_id
-WHERE titulo LIKE :titulo");
-$query->bindParam(':titulo', $titulo, PDO::PARAM_STR);
+$_SESSION['curriculo_id']=$curriculo_id;
+$query=$conn->prepare('SELECT h.curriculo_id, h.vaga_id, v.id, v.titulo, v.finalizado, v.exigencia, v.beneficio, v.descricao, v.cargo, v.empresa_id, e.nome, e.email FROM projeto.historico_vaga as h
+INNER JOIN projeto.vaga as v
+on v.id=h.vaga_id
+INNER JOIN projeto.empresa as e
+on v.empresa_id=e.id
+WHERE h.curriculo_id=:curriculo_id');
+$query->bindParam(':curriculo_id', $curriculo_id);
 $query->execute();
 $resultados=$query->fetchAll(PDO::FETCH_ASSOC);
-
-
-include_once('../template/cabecalhoAluno.php');
 ?>
+
 <html lang="pt-BR">
     <head>
         <meta charset="UTF-8">
@@ -26,7 +23,7 @@ include_once('../template/cabecalhoAluno.php');
     </head>
 <body>
     <div class="resultado">
-        <h5>Resultado da Busca</h5>
+        <h5>Histórico</h5>
     </div>
     <div class="lista-curriculos">
         <table id='tabela' class="table table-sm table-striped">
@@ -69,8 +66,7 @@ include_once('../template/cabecalhoAluno.php');
         }else{
         ?>
         <div class="sem-resultado">
-                <p for="">Não foi possível encontrar uma vaga!</p>
-                <a href="../views/buscaCurriculo.php">Voltar</a>
+                <p for="">Não há nada no histórico ainda!</p>
         </div>
         <?php
         }
@@ -79,5 +75,3 @@ include_once('../template/cabecalhoAluno.php');
   
 </body>
 </html>
-<?php
-include_once('../template/footer.php');

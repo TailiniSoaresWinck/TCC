@@ -1,3 +1,17 @@
+<?php
+
+$msg="";
+
+if(isset($_SESSION["msg"])){
+
+    $msg=$_SESSION["msg"];
+    $status=$_SESSION["status"];
+
+    $_SESSION["msg"]= "";
+    $_SESSION["status"]="";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -11,6 +25,11 @@
     <title>Cadastro</title>
 </head>
 <body>
+<?php if($msg!=""):?>
+    <div class="alert alert-<?=$status?>">
+    <p><?=$msg?></p>
+    </div>
+<?php endif;?>
 <div class="container login-container">
             <div class="row">
                 <div class="col-md-6 login-form-1">

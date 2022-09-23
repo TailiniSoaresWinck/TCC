@@ -1,9 +1,8 @@
 <?php
     include_once('../config.php');
-    include_once('../process/vaga.php');
     $id= filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
     $_SESSION['idVaga']=$id;
-
+    $curriculo_id= $_SESSION['curriculo_id'];
     include_once('../template/cabecalhoAluno.php');
 ?>
 <!DOCTYPE html>
@@ -56,14 +55,30 @@
             <p><?=$row_vaga['exigencia'];?></p>
             </div>
         </div>
-        <div class="form-editar">
+        <?php
+        $query=$conn->prepare("SELECT * FROM projeto.historico_vaga as h WHERE h.curriculo_id=:curriculo_id and h.vaga_id=:id");
+        $query->bindParam(':curriculo_id', $curriculo_id);
+        $query->bindParam(':id', $id);
+        $query->execute();
+        if($query->rowCount()>=1){?>
+        <div style='display:none;'class="form-editar">
             <form action="../process/historico.php" method="POST">
                 <input type="hidden" name="id" value="<?=$row_vaga['id']?>">
-                <button class='btn' type="submit">Enviar Curriculo</button>
+                <button class='btn' type="submit">Enviar Currículo</button>
             </form>
         </div>
         <?php
         }
+        else{
+        ?>
+        <div class="form-editar">
+            <form action="../process/historico.php" method="POST">
+                <input type="hidden" name="id" value="<?=$row_vaga['id']?>">
+                <button class='btn' type="submit">Enviar Currículo</button>
+            </form>
+        </div>
+        <?php
+        }}
         ?>
 </body>
 </html>

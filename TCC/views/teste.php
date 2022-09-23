@@ -1,10 +1,3 @@
-<?php
-include_once('../config.php');
-include_once('../process/curriculo.php');
-
-$curriculo_id=$_SESSION['curriculo_id'];
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +7,6 @@ $curriculo_id=$_SESSION['curriculo_id'];
     <title>Document</title>
 </head>
 <body>
-    <a href="detalhesCurriculo.php?id=<?=$curriculo_id?>">Ver curriculo</a>
-    
+    <h1>AAAAAAAAAAAA</h1>
 </body>
 </html>

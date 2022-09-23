@@ -43,7 +43,7 @@ include_once('../template/cabecalhoAluno.php');
                 <h3><?=$row_curriculo['instituicao'];?></h3>
             </div>
             <div class="nivel">
-                <label for="">Email:</label>
+                <label for="">Nível:</label>
                 <h3><?=$row_curriculo['nivel'];?></h3>
             </div>
             <div class="curso">

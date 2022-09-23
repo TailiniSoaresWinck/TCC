@@ -1,5 +1,16 @@
 <?php
+include_once('../config.php');
 include_once('../template/cabecalhoEmp.php');
+$msg="";
+
+if(isset($_SESSION["msg"])){
+
+    $msg=$_SESSION["msg"];
+    $status=$_SESSION["status"];
+
+    $_SESSION["msg"]= "";
+    $_SESSION["status"]="";
+}
 ?>
 <html lang="pt-BR">
     <head>
@@ -9,6 +20,11 @@ include_once('../template/cabecalhoEmp.php');
     <link rel="stylesheet" href="../css/criar.css">
     </head>
 <body>
+<?php if($msg!=""):?>
+    <div class="alert alert-<?=$status?>">
+    <p><?=$msg?></p>
+    </div>
+<?php endif;?>
     <div class="criar-editar">
         <h5> Criar Vaga</h5>
     </div>

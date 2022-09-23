@@ -1,7 +1,5 @@
 <?php
 include_once('../config.php');
-include_once('../process/curriculo.php');
-
 $curriculo_id=$_SESSION['curriculo_id'];
 include_once('../template/cabecalhoEmp.php');
 ?>
