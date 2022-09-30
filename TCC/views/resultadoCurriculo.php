@@ -32,6 +32,8 @@ include_once('../template/cabecalhoEmp.php');
     <div class="resultado">
         <h5>Resultado da busca</h5>
     </div>
+    <?php
+        if(count($resultados)){?>
     <div class="lista-curriculos">
         <table id='tabela' class="table table-sm table-striped">
         <thead>
@@ -45,7 +47,6 @@ include_once('../template/cabecalhoEmp.php');
         </thead>
         <tbody style=" background: #383838;">
         <?php
-        if(count($resultados)){
         foreach($resultados as $resultado){?>
             <tr>
             <td style="color:#FFF;"scope="row"><?=$resultado['id']?></td>

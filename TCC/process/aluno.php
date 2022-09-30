@@ -98,3 +98,7 @@ if($metodo==="POST"){
     }
 
 }
+else if($metodo==="GET"){
+    $sql=$conn->query("SELECT * FROM projeto.aluno");
+    $alunos=$sql->fetchAll();
+}

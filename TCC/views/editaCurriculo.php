@@ -30,14 +30,15 @@ include_once('../template/cabecalhoAluno.php');
     </div><div class="form">
                         <form action="../process/curriculo.php" method="POST">
                             <div class="conteudo">
-                            <h5>Formação</h5>
-                                <div class="control">
-                                    <input name="area_prof" type="text"  value="<?=$row_curriculo['area_profissional'];?>" autofocus>
-                                </div>
-                            </div>
+                            <h5>Objetivo</h5>
                             <div class="conteudo">
                                 <div class="control">
                                 <textarea name="objetivo" cols="30" rows="10"><?=$row_curriculo['objetivo'];?></textarea>
+                                </div>
+                            </div>
+                            <h5>Formação</h5>
+                                <div class="control">
+                                    <input name="area_prof" type="text"  value="<?=$row_curriculo['area_profissional'];?>" autofocus>
                                 </div>
                             </div>
                             <div class="conteudo">

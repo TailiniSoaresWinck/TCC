@@ -25,6 +25,8 @@ $resultados=$query->fetchAll(PDO::FETCH_ASSOC);
     <div class="resultado">
         <h5>Histórico</h5>
     </div>
+    <?php
+        if(count($resultados)){?>
     <div class="lista-curriculos">
         <table id='tabela' class="table table-sm table-striped">
         <thead>
@@ -38,7 +40,6 @@ $resultados=$query->fetchAll(PDO::FETCH_ASSOC);
         </thead>
         <tbody style=" background: #383838;">
         <?php
-        if(count($resultados)){
         foreach($resultados as $resultado){
             if($resultado['finalizado']==1){
                 $resultado['finalizado']='Não';
@@ -75,3 +76,7 @@ $resultados=$query->fetchAll(PDO::FETCH_ASSOC);
   
 </body>
 </html>
+
+<?php
+
+include_once("../template/footer.php");

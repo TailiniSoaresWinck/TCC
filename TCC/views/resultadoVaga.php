@@ -24,10 +24,12 @@ include_once('../template/cabecalhoAluno.php');
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../css/resultado.css">
     </head>
-<body>
+<body id='body'>
     <div class="resultado">
         <h5>Resultado da Busca</h5>
     </div>
+    <?php
+        if(count($resultados)){?>
     <div class="lista-curriculos">
         <table id='tabela' class="table table-sm table-striped">
         <thead>
@@ -41,7 +43,6 @@ include_once('../template/cabecalhoAluno.php');
         </thead>
         <tbody style=" background: #383838;">
         <?php
-        if(count($resultados)){
         foreach($resultados as $resultado){
             if($resultado['finalizado']==1){
                 $resultado['finalizado']='Não';?>
@@ -80,13 +81,11 @@ include_once('../template/cabecalhoAluno.php');
         ?>
         <div class="sem-resultado">
                 <p for="">Não foi possível encontrar uma vaga!</p>
-                <a href="../views/buscaCurriculo.php">Voltar</a>
         </div>
         <?php
         }
         ?>
     </div>
-  
 </body>
 </html>
 <?php
