@@ -31,6 +31,9 @@ if(isset($_SESSION["msg"])){
     <div class="lista">
         <h5>Suas Vagas</h5>
     </div>
+    <?php
+    if(count($vagas)){
+    ?>
     <div class="lista-vagas">
         <table id='tabela' class="table table-sm table-striped">
         <thead>
@@ -67,5 +70,18 @@ if(isset($_SESSION["msg"])){
         </tbody>
         </table>
     </div>
+    <?php
+    }
+    else{?>
+    <div class='sem-vagas'>
+        <h3>Sem vagas ainda</h3>
+    </div>
+    <?php
+    }
+    ?>
 </body>
 </html>
+
+<?php
+
+include_once('../template/footer.php');

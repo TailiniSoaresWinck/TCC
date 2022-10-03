@@ -52,3 +52,9 @@ p{
     text-align: center;
     width: 17vw;
 }
+.sem-vagas{
+    min-height: 57vh;
+}
+.sem-vagas h3{
+    padding: 2vh;
+}

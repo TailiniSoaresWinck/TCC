@@ -12,7 +12,7 @@
 </head>
 <body>
 <div class="container login-container">
-            <div class="row">
+            <div class="row justify-content-md-center">
                 <div class="col-md-6 login-form-1">
                     <h3>Administrador</h3>
                     <form action="../process/administrador.php" method="POST">

@@ -275,3 +275,10 @@ p{
 .sem-candidato{
     display: inline-flex;
 }
+
+.erro{
+    min-height: 57vh;
+}
+.erro h3{
+    padding: 2vh;
+}

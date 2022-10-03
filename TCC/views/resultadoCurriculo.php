@@ -76,3 +76,7 @@ include_once('../template/cabecalhoEmp.php');
     </div>
 </body>
 </html>
+
+<?php
+
+include_once('../template/footer.php');

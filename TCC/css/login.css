@@ -12,7 +12,7 @@
 }
 .login-form-2{
     padding: 5%;
-    background: #0062cc;
+    background: #2062AD;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
 }
 .login-form-2 h3{
@@ -33,11 +33,11 @@
 .login-form-1 .btnSubmit{
     font-weight: 600;
     color: #fff;
-    background-color: #0062cc;
+    background-color: #2062AD;
 }
 .login-form-2 .btnSubmit{
     font-weight: 600;
-    color: #0062cc;
+    color: #2062AD;
     background-color: #fff;
 }
 .login-form-2 .SRegistro{
@@ -46,7 +46,7 @@
     text-decoration: none;
 }
 .login-form-1 .SRegistro{
-    color: #0062cc;
+    color: #2062AD;
     font-weight: 600;
     text-decoration: none;
 }
