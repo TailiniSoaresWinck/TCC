@@ -3,7 +3,7 @@
 session_start();
 
 $user = 'root';
-$pass="c108";
+$pass="";
 $db="projeto";
 $host="localhost";
 

@@ -107,6 +107,10 @@ CREATE TABLE historico_vaga(
     foreign key(curriculo_id) references curriculo(id)
 );
 
+INSERT INTO cod_acesso(codigo) VALUES (
+	'12345678'
+);
+
 INSERT INTO curso(nome) VALUES (
 	"Informática"
 );

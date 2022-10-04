@@ -6,7 +6,9 @@
     padding: 20px;
     font-size: 18px;
 }
-
+.lista-vagas{
+    min-height:57vh
+}
 .alert.alert-success{
     border:2px solid #155724;
 }

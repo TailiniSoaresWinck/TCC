@@ -15,7 +15,7 @@ include_once('../template/cabecalhoAdmin.php');
     <div class="lista">
         <h5>Matrículas</h5>
     </div>
-    <div class="lista-matriculas">
+    <div class="lista-empresas">
         <table id='tabela' class="table table-sm table-striped">
         <thead>
             <tr>
@@ -35,11 +35,11 @@ include_once('../template/cabecalhoAdmin.php');
             }?>
         </tbody>
         </table>
-    </div>
-    <div style="text-align:center;padding:2vh;">
+        <div style="text-align:center;padding:2vh;">
         <form action="../views/criarMatricula.php">
         <input  class="btn" style="background-color:#2062AD; color:#FFF; font-weight:400;" type="submit" value="Criar Matrícula">
         </form>
+    </div>
     </div>
 </body>
 </html>

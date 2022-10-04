@@ -15,7 +15,7 @@ include_once('../template/cabecalhoAdmin.php');
 <div class="lista">
         <h5>Empresas</h5>
     </div>
-    <div class="lista">
+    <div class="lista-empresas" >
         <table id='tabela' class="table table-sm table-striped">
         <thead>
             <tr>

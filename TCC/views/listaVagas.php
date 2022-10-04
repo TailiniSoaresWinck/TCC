@@ -34,7 +34,7 @@ if(isset($_SESSION["msg"])){
     <?php
     if(count($vagas)){
     ?>
-    <div class="lista-vagas">
+    <div class="lista-vagas" >
         <table id='tabela' class="table table-sm table-striped">
         <thead>
             <tr>

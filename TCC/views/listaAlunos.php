@@ -18,7 +18,7 @@ include_once('../template/cabecalhoAdmin.php');
     <?php
     if(count($alunos)){
     ?>
-    <div class="lista">
+    <div class="lista-empresas">
         <table id='tabela' class="table table-sm table-striped">
         <thead>
             <tr>

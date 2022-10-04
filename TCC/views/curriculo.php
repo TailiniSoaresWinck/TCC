@@ -1,6 +1,7 @@
 <?php
 include_once('../config.php');
-$curriculo_id=$_SESSION['curriculo_id'];
+$curriculo_id= filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
+
 include_once('../template/cabecalhoEmp.php');
 ?>
 <html lang="pt-BR">
@@ -34,6 +35,12 @@ include_once('../template/cabecalhoEmp.php');
                 <h3><?=$row_curriculo['email'];?></h3>
             </div>
         </div>
+        <div class="dados-pessoais">
+            <h5>Objetivo</h5>
+            <div class="aluno-nome">
+                <h3><?=utf8_encode($row_curriculo['objetivo']);?></h3>
+            </div>
+        </div>
         <div class="dados-formacao">
             <h5>Formação</h5>
             <div class="instituicao">
@@ -46,7 +53,7 @@ include_once('../template/cabecalhoEmp.php');
             </div>
             <div class="curso">
                 <label for="">Curso:</label>
-                <h3><?=$row_curriculo['nome'];?></h3>
+                <h3><?=utf8_encode($row_curriculo['nome']);?></h3>
             </div>
             <div class="data-formacao">
                 <label for="">Data Início:</label>

@@ -4,6 +4,9 @@
     margin:0;
     padding: 0;
 }
+.lista-empresas{
+    min-height: 57vh;
+}
 .lista h5{
     font-size: 4vh;
     padding:1vh;
