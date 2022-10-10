@@ -12,7 +12,7 @@ if($metodo=="POST"){
     $queryVerifica->execute();
     if($queryVerifica->rowCount()<=0){
         $_SESSION['msg']='Não há nenhum currículo para ser enviado!';
-        $_SESSION['type']='warning';
+        $_SESSION['status']='warning';
         header('Location:../views/buscaVaga.php');
     }
     else{
@@ -25,7 +25,7 @@ if($metodo=="POST"){
     $query->execute();
     if($query->rowCount()>=1){
         $_SESSION['msg']='Já foi enviado para esta vaga!';
-        $_SESSION['type']='warning';
+        $_SESSION['status']='warning';
         header('Location:../views/buscaVaga.php');
     }
     else{
@@ -40,12 +40,12 @@ if($metodo=="POST"){
     $query->execute();
     if($query==true){
         $_SESSION['msg']='Currículo enviado!';
-        $_SESSION['type']='success';
+        $_SESSION['status']='success';
         header('Location:../views/buscaVaga.php');
     }
     else{
         $_SESSION['msg']='Aconteceu um erro!';
-        $_SESSION['type']='warning';
+        $_SESSION['status']='warning';
         header('Location:../views/buscaVaga.php');
     }
     }

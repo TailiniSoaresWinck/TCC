@@ -1,7 +1,6 @@
 <?php
 include_once('../config.php');
-
-//$admin_id=$_SESSION['admin_id'];
+include_once('msg.php');
 ?>
 
 <!DOCTYPE html>

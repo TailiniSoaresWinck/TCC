@@ -1,3 +1,7 @@
+<?php
+include_once('../config.php');
+include_once('msg.php');
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -31,6 +35,5 @@
 </svg></a></li>
     </ul>
   </section>
- 
 </body>
 </html>

@@ -41,6 +41,8 @@ if($metodo==="POST"){
                     )");
 
                     if($cadastraEmp==true){
+                        $_SESSION["msg"]="Cadastro realizado com sucesso!";
+                        $_SESSION["status"]="success";
                         header('Location:../views/login.php');
                     }
                     else{

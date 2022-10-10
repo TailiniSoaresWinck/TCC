@@ -33,3 +33,23 @@ footer{
     font-size: 2vh;
     font-weight: 500;
 }
+.alert{
+    border-radius: 0;
+    text-align: center;
+    margin-bottom: 0;
+    font-weight: bold;
+    padding: 20px;
+    font-size: 18px;
+}
+
+.alert.alert-success{
+    border:2px solid #155724;
+}
+
+.alert.alert-warnig{
+    border:2px solid #856404;
+}
+
+.alert p{
+    margin-bottom: 0;
+}

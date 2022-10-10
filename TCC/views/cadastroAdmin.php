@@ -1,3 +1,7 @@
+<?php
+include_once('../config.php');
+include_once('../template/msg.php');
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>

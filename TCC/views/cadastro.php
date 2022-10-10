@@ -1,17 +1,7 @@
 <?php
-
-$msg="";
-
-if(isset($_SESSION["msg"])){
-
-    $msg=$_SESSION["msg"];
-    $status=$_SESSION["status"];
-
-    $_SESSION["msg"]= "";
-    $_SESSION["status"]="";
-}
+include_once('../config.php');
+include_once('../template/msg.php');
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -25,11 +15,6 @@ if(isset($_SESSION["msg"])){
     <title>Cadastro</title>
 </head>
 <body>
-<?php if($msg!=""):?>
-    <div class="alert alert-<?=$status?>">
-    <p><?=$msg?></p>
-    </div>
-<?php endif;?>
 <div class="container login-container">
             <div class="row">
                 <div class="col-md-6 login-form-1">

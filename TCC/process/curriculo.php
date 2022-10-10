@@ -32,7 +32,8 @@ if($metodo==="POST"){
             $verificaQuery=$conn->query("SELECT * FROM projeto.curriculo c WHERE c.aluno_id=".$aluno_id."");
 
             if($verificaQuery->rowCount()>0){
-                echo 'Você já tem um currículo cadastrado';
+                $_SESSION["msg"]="Você já tem currículo cadastrado!";
+                $_SESSION["status"]="warning";
                 header('Location:../views/buscaVaga.php');
             }
             else{
@@ -100,6 +101,8 @@ if($metodo==="POST"){
                         $dados = $query->fetchAll(PDO::FETCH_COLUMN, 0);
                         $curriculo_id=$dados[0];
                         $_SESSION['curriculo_id']=$curriculo_id;
+                        $_SESSION["msg"]="Currículo cadastrado com sucesso!";
+                        $_SESSION["status"]="success";
                         header('Location:../views/buscaVaga.php');
                     }
 
@@ -133,11 +136,14 @@ if($metodo==="POST"){
             $queryCurriculo=$conn->query("UPDATE projeto.curriculo c SET c.area_profissional='".$area_prof."', c.objetivo='".$objetivo."' WHERE c.aluno_id=".$aluno_id."");
             
             if($queryCurriculo==true && $queryCursoComp==true && $queryExp==true && $queryForm==true){
+                $_SESSION["msg"]="Editado com sucesso!";
+                $_SESSION["status"]="success";
                 header('Location:../views/buscaVaga.php');
             }
             else{
                 $_SESSION["msg"]="Houve um erro tente novamente!";
                 $_SESSION["status"]="warning";
+                header('Location:../views/buscaVaga.php');
             }
     }
 }

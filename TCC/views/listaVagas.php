@@ -2,16 +2,7 @@
     include_once('../config.php');
     include_once('../process/vaga.php');
     include_once('../template/cabecalhoEmp.php');
-    $msg="";
-
-if(isset($_SESSION["msg"])){
-
-    $msg=$_SESSION["msg"];
-    $status=$_SESSION["status"];
-
-    $_SESSION["msg"]= "";
-    $_SESSION["status"]="";
-}
+ 
 ?>
 
 <!DOCTYPE html>
@@ -23,11 +14,6 @@ if(isset($_SESSION["msg"])){
     <link rel="stylesheet" href="../css/listaVaga.css">
 </head>
 <body>
-<?php if($msg!=""):?>
-    <div class="alert alert-<?=$status?>">
-    <p><?=$msg?></p>
-    </div>
-<?php endif;?>
     <div class="lista">
         <h5>Suas Vagas</h5>
     </div>
