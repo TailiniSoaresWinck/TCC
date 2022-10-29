@@ -138,6 +138,7 @@ if($metodo==="POST"){
 
             }
         }
+    
     }else if($type==="editar_curriculo"){
 
         if(empty($_POST['area_prof'] && $_POST['objetivo'] && $_POST['instituicao'] && $_POST['nivel'] && $_POST['inicio'] && $_POST['fim'] && $_POST['curso']  )){

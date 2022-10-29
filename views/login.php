@@ -53,10 +53,10 @@ include_once(''.TEMPLATE_PATH.'/msg.php');
                             <input type="submit" class="btnSubmit" value="Login" required/>
                         </div>
                         <div class="form-group">
-                            <a href="<?php echo URL_VIEWS?>cadastro.php" class="SRegistro" value="Login">Não tem cadastro?</a>
+                            <a href="<?php echo URL_VIEWS?>/cadastro.php" class="SRegistro" value="Login">Não tem cadastro?</a>
                         </div>
                         <div class="form-group">
-                            <a href="<?php echo URL_VIEWS?>recuperarSenha.php" class="SRegistro">Esqueceu a senha?</a>
+                            <a href="<?php echo URL_VIEWS?>/recuperarSenha.php" class="SRegistro">Esqueceu a senha?</a>
                         </div>
                     </form>
                 </div>

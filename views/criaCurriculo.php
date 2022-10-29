@@ -2,7 +2,7 @@
 include_once('../config.php');
 include_once('../settings.php');
 include_once(''.TEMPLATE_PATH.'/cabecalhoAluno.php');
-include_once(''.URL_PROCESS.'/curso.php');
+include_once('../process/curso.php');
 ?>
 
 <html lang="pt-BR">
