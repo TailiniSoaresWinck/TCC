@@ -1,5 +1,4 @@
-CREATE DATABASE projeto;
-
+CREATE DATABASE projeto CHARACTER SET utf8 COLLATE utf8_bin;
 use projeto;
 CREATE TABLE administrador(
 	id int not null auto_increment primary key,
@@ -108,12 +107,6 @@ CREATE TABLE historico_vaga(
     foreign key(curriculo_id) references curriculo(id)
 );
 
-CREATE TABLE recuperar_senha(
-	id int not null auto_increment primary key,
-    email varchar(100),
-    rash varchar(100),
-    status int
-);
 INSERT INTO cod_acesso(codigo) VALUES (
 	'12345678'
 );
