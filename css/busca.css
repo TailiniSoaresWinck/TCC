@@ -1,0 +1,58 @@
+.alert{
+    border-radius: 0;
+    text-align: center;
+    margin-bottom: 0;
+    font-weight: bold;
+    padding: 20px;
+    font-size: 18px;
+}
+
+.alert.alert-success{
+    border:2px solid #155724;
+}
+
+.alert.alert-warnig{
+    border:2px solid #b32e2e;
+}
+
+.alert p{
+    margin-bottom: 0;
+}
+.busca h5{
+    font-size: 4vh;
+    padding:1vh;
+    color:#FFF;
+    background-color: #f3be0e;
+}
+.busca form{
+    margin-top: 2vh;
+    justify-content: center;
+    text-align: center;
+    display:flex;
+}
+.busca input{
+    width: 70vw;
+}
+.info-extra{
+    margin-top: 4vh;
+}
+.info-extra h3{
+    color:#00152c;
+    font-size: 3vh;
+    text-align: center;
+}
+.info-extra p{
+    color:#00152c;
+    font-size: 3vh;
+    text-align: justify;
+    padding:2vh;
+    margin-top: 2vh;
+}
+.info-img{
+    text-align: center;
+    width:100%;
+}
+.info-img img{
+    margin-top: 1vh;
+    width:80%;
+}
