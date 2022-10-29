@@ -1,4 +1,3 @@
-<<<<<<< HEAD:css/style.css
 
 /**{
     margin:0;
@@ -37,60 +36,3 @@ footer{
 }   */
 
 
-=======
-*{
-    margin:0;
-    padding: 0;
-}
-header{
-    background-color: #2062AD;
-    width: 100vw;
-    display: flex;
-}
-#divImg{
-    padding:2vw;
-    width: 20vw;
-}
-#logo{
-    width: 100%;
-}
-#divTitulo{
-    padding: 2vw;
-    width: 80vw;
-    text-align: center;
-}
-#titulo{
-    color: #FFF;
-    font-size: 3vh;
-}
-footer{
-    padding: 10vw;
-    height: 15vh;
-    background-color: #c0c0c0;
-    text-align: center;
-}
-#fp{
-    font-size: 2vh;
-    font-weight: 500;
-}
-.alert{
-    border-radius: 0;
-    text-align: center;
-    margin-bottom: 0;
-    font-weight: bold;
-    padding: 20px;
-    font-size: 18px;
-}
-
-.alert.alert-success{
-    border:2px solid #155724;
-}
-
-.alert.alert-warnig{
-    border:2px solid #856404;
-}
-
-.alert p{
-    margin-bottom: 0;
-}
->>>>>>> 76f60573f412bd144741b24927ff095a90e84d46:TCC/template/css/style.css
