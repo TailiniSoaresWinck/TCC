@@ -71,7 +71,7 @@ CREATE TABLE curso_complementar(
 
 CREATE TABLE curriculo(
 	id int not null auto_increment primary key,
-    area_profissional varchar(20),
+    area_profissional varchar(45),
     objetivo tinytext,
     aluno_id int not null,
     experiencia_id int not null,
