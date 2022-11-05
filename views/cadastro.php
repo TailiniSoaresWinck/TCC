@@ -26,7 +26,7 @@ include_once(''.TEMPLATE_PATH.'/msg.php');
                             <input type="text" class="form-control"  name="nome" placeholder="Nome da empresa" value="" required/>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="cnpj"  onkeypress="$(this).mask('00.000.000/0000-00')" placeholder="CNPJ" value="" required/>
+                            <input type="text" class="form-control" name="cnpj"   placeholder="CNPJ" value="" required/>
                         </div>
                         <div class="form-group">
                             <input type="email" class="form-control"  name="email" placeholder="Email" value="" required/>
