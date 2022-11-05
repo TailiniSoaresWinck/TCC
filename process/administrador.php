@@ -88,7 +88,7 @@ if($metodo==="POST"){
                 $admin_id=$dados[0];
                 $_SESSION['admin_id']=$admin_id;
                 //var_dump($_SESSION['admin_id']);
-                header('Location:'.URL_VIEWS.'/teste.php');
+                header('Location:'.URL_VIEWS.'/inicioAdmin.php');
             }
         }
     }

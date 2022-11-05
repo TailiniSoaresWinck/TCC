@@ -25,12 +25,12 @@ if(empty($_SESSION['empresa_id'])){
     <form action="<?php echo URL_PROCESS?>/vaga.php" method="POST">
         <div class="conteudo">
             <div class="control">
-                <input name="titulo" type="text"  placeholder="Titulo"  required>
+                <input name="titulo" type="text"  placeholder="Titulo" oninput="javascript: if(this.value.length>this.maxLength)this.value = this.value.slice(this.minLength, this.maxLength)" minlength="10" maxlength="20"  required>
             </div>
         </div>
         <div class="conteudo">
             <div class="control">
-                <input name="cargo" type="text"  placeholder="Cargo" required>
+                <input name="cargo" type="text"  placeholder="Cargo" oninput="javascript: if(this.value.length>this.maxLength)this.value = this.value.slice(this.minLength, this.maxLength)" minlength="" maxlength="20"  required>
             </div>
         </div>
         <div class="conteudo">

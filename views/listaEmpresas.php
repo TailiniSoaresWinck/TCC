@@ -16,7 +16,9 @@ include_once(''.TEMPLATE_PATH.'/cabecalhoAdmin.php');
 <div class="lista">
         <h5>Empresas</h5>
     </div>
+    
     <div class="lista-empresas" >
+   
         <table id='tabela' class="table table-sm table-striped">
         <thead>
             <tr>
@@ -41,10 +43,12 @@ include_once(''.TEMPLATE_PATH.'/cabecalhoAdmin.php');
 </svg></a></td>
             </tr>
             <?php
-            }?>
+            }
+            ?>
         </tbody>
         </table>
     </div>
+    
 </body>
 </html>
 <?php

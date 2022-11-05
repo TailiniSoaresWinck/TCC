@@ -16,10 +16,8 @@ include_once(''.TEMPLATE_PATH.'/cabecalhoAdmin.php');
 <div class="lista">
         <h5>Alunos</h5>
     </div>
-    <?php
-    if(count($alunos)){
-    ?>
     <div class="lista-empresas">
+    
         <table id='tabela' class="table table-sm table-striped">
         <thead>
             <tr>
@@ -48,16 +46,7 @@ include_once(''.TEMPLATE_PATH.'/cabecalhoAdmin.php');
         </tbody>
         </table>
     </div>
-    <?php
-    }
-    else{
-    ?>
-    <div class='sem-lista'>
-        <h3>Sem empresas cadastradas</h3>
-    </div>
-    <?php
-    }
-    ?>
+    
 </body>
 </html>
 <?php

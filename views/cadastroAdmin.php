@@ -31,7 +31,8 @@ include_once(''.TEMPLATE_PATH.'/msg.php');
                             <input type="text" class="form-control"  name="cod_acesso" placeholder="Código" value="" required/>
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" name="senha" placeholder="Senha *" value="" required/>
+                            <input type="password" class="form-control" name="senha" placeholder="Senha *" value="" oninput="javascript: if(this.value.length>this.maxLength)this.value = this.value.slice(this.minLength, this.maxLength)" minlength="5" maxlength="8"  required/>
+                            <code>Mínimo 5 caracteres | Máximo 8 caracteres</code>
                         </div>
                         <div class="form-group">
                             <input type="hidden" name="type" value="cadastrar_admin">

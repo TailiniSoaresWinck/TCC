@@ -29,7 +29,7 @@ else if($metodo==="POST"){
         $sql=$conn->query("INSERT INTO projeto.matricula(codmatricula) VALUES ('".$codmatricula."')");
         $_SESSION["msg"]="Matricula cadastrada com sucesso!";
         $_SESSION["status"]="success";
-        header('Location:'.URL_VIEWS.'/teste.php');
+        header('Location:'.URL_VIEWS.'/inicioAdmin.php');
         }
     }
 }

@@ -2,6 +2,9 @@
 include_once('../config.php');
 include_once('../settings.php');
 include_once(''.TEMPLATE_PATH.'/msg.php');
+if(empty($_SESSION['admin_id'])){
+    header('Location:'.URL_VIEWS.'/unset.php');
+}
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +31,7 @@ include_once(''.TEMPLATE_PATH.'/msg.php');
     <div class='menu-button'></div>
   </label>
     <ul class="menu">
-     <li><a href="<?php echo URL_VIEWS?>/teste.php">Início</a></li>
+     <li><a href="<?php echo URL_VIEWS?>/inicioAdmin.php">Início</a></li>
       <li><a href="<?php echo URL_VIEWS?>/listaEmpresas.php">Empresas</a></li>
       <li><a href="<?php echo URL_VIEWS?>/listaAlunos.php">Alunos</a></li>
       <li><a href="<?php echo URL_VIEWS?>/listaMatriculas.php">Matrículas</a></li>

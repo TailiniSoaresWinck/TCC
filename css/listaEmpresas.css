@@ -1,6 +1,5 @@
 
 .lista{
-
     margin:0;
     padding: 0;
 }
@@ -30,10 +29,6 @@ p{
     font-weight: 600;
 }
 .sem-lista{
+    min-height: 57vh;
     display: inline-flex;
-}
-.sem-lista a{
-    padding: 1vh;
-    text-align: center;
-    width: 17vw;
 }

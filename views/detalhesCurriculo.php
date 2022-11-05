@@ -46,6 +46,10 @@ include_once(''.TEMPLATE_PATH.'/cabecalhoAluno.php');
         <div class="dados-formacao">
             <h5>Formação</h5>
             <div class="instituicao">
+                <label for="">Área professional:</label>
+                <h3><?=$row_curriculo['area_profissional'];?></h3>
+            </div>
+            <div class="instituicao">
                 <label for="">Instituição:</label>
                 <h3><?=utf8_encode($row_curriculo['instituicao']);?></h3>
             </div>

@@ -23,7 +23,7 @@ include_once(''.TEMPLATE_PATH.'/cabecalhoAdmin.php');
         <div style="min-height:35vh;"class="conteudo">
         <h5>Código de Matrícula</h5> 
             <div class="control">
-            <input type='text' name="codmatricula" required   placeholder="Código Matrícula" />
+            <input type='text' name="codmatricula" required  oninput="javascript: if(this.value.length>this.maxLength)this.value = this.value.slice(this.minLength, this.maxLength)" minlength="" maxlength="11"  placeholder="Código Matrícula" />
             </div>
             </div>
         <input type="hidden" name="type" value="criar_matricula">  

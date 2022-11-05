@@ -3,10 +3,6 @@ include_once('../config.php');
 include_once('../settings.php');
 
 
-if(empty($_SESSION['empresa_id'])){
-    header('Location:'.URL_VIEWS.'/unset.php');
-}
-
 if(empty($_POST['curriculo_areaProf'])){
     header('Location:'.URL_VIEWS.'/buscaCurriculo.php');
 }

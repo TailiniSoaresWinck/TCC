@@ -30,7 +30,7 @@ include_once('../process/curso.php');
         <div class="conteudo">
             <h5>Formação</h5>
             <div class="control">
-                <input name="area_prof" type="text" class="" placeholder="Área Profissional" autofocus required>
+                <input name="area_prof" type="text" class="" oninput="javascript: if(this.value.length>this.maxLength)this.value = this.value.slice(this.minLength, this.maxLength)" minlength="" maxlength="45"  placeholder="Área Profissional" autofocus required>
             </div>
         </div>
         <div class="conteudo">

@@ -1,7 +1,7 @@
 <?php
 include_once('../config.php');
 include_once('../settings.php');
-
+include('speedio.php');
 $metodo = $_SERVER["REQUEST_METHOD"];
 
 
@@ -22,6 +22,23 @@ if($metodo==="POST"){
             $cnpj = $_POST['cnpj'];
             $senha = MD5($_POST['senha']);
 
+            $obSpeedio = new  Speedio();
+            $resultado = $obSpeedio->consultarCNPJ($cnpj);
+            print_r($resultado);
+            if(empty($resultado)){
+                    $_SESSION["msg"]="Problemas ao consultar cnpj!";
+                    $_SESSION["status"]="warning";
+                    header('Location:'.URL_VIEWS.'/cadastro.php');
+            }
+
+            else if(isset($resultado['error']))
+            {
+                    $_SESSION["msg"]="CNPJ inválido!";
+                    $_SESSION["status"]="warning";
+                    header('Location:'.URL_VIEWS.'/cadastro.php');
+            }
+            else{
+
             $verificaQuery= $conn->query("SELECT e.cnpj FROM  projeto.empresa e WHERE e.cnpj=".$cnpj."");
 
 
@@ -32,7 +49,8 @@ if($metodo==="POST"){
                 header('Location:'.URL_VIEWS.'/cadastro.php');
             }
             else {
-
+                                
+                
                 $cadastraEmp = $conn->query("INSERT INTO projeto.empresa(nome, email, cnpj, senha) VALUES (
                     '$nome',
                     '$email',
@@ -52,6 +70,7 @@ if($metodo==="POST"){
                         header('Location:'.URL_VIEWS.'/cadastro.php');
                     }
                 }
+            }
         }
     }
     else if($type==="login_emp"){
