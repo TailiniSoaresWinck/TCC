@@ -1,4 +1,4 @@
-CREATE DATABASE projeto CHARACTER SET utf8 COLLATE utf8_bin;
+CREATE DATABASE projeto CHARACTER SET utf8 COLLATE utf8_general_ci;
 use projeto;
 CREATE TABLE administrador(
 	id int not null auto_increment primary key,
@@ -40,7 +40,7 @@ CREATE TABLE empresa(
 CREATE TABLE experiencia(
 	id int not null auto_increment primary key,
     empresa varchar(50),
-    cargo varchar(50),
+    cargo varchar(30),
     admissao date,
     demissao date,
     aluno_id int not null, 
@@ -87,7 +87,7 @@ CREATE TABLE curriculo(
 CREATE TABLE vaga(
 	id int not null auto_increment primary key,
     titulo varchar(20),
-    cargo varchar(50),
+    cargo varchar(45),
     descricao tinytext,
     beneficio tinytext,
     exigencia tinytext,

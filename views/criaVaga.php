@@ -30,7 +30,7 @@ if(empty($_SESSION['empresa_id'])){
         </div>
         <div class="conteudo">
             <div class="control">
-                <input name="cargo" type="text"  placeholder="Cargo" oninput="javascript: if(this.value.length>this.maxLength)this.value = this.value.slice(this.minLength, this.maxLength)" minlength="" maxlength="20"  required>
+                <input name="cargo" type="text"  placeholder="Cargo" oninput="javascript: if(this.value.length>this.maxLength)this.value = this.value.slice(this.minLength, this.maxLength)" minlength="" maxlength="45"  required>
             </div>
         </div>
         <div class="conteudo">

@@ -30,17 +30,17 @@ include_once(''.TEMPLATE_PATH.'/cabecalhoAluno.php');
             <h5>Dados Pessoais</h5>
             <div class="aluno-nome">
                 <label for="">Nome Completo:</label>
-                <h3><?=utf8_encode($row_curriculo['aluno']);?></h3>
+                <h3><?=$row_curriculo['aluno'];?></h3>
             </div>
             <div class="aluno-email">
                 <label for="">Email:</label>
-                <h3><?=utf8_encode($row_curriculo['email']);?></h3>
+                <h3><?=$row_curriculo['email'];?></h3>
             </div>
         </div>
         <div class="dados-pessoais">
             <h5>Objetivo</h5>
             <div class="aluno-nome">
-                <h3><?=utf8_encode($row_curriculo['objetivo']);?></h3>
+                <h3><?=$row_curriculo['objetivo'];?></h3>
             </div>
         </div>
         <div class="dados-formacao">
@@ -51,7 +51,7 @@ include_once(''.TEMPLATE_PATH.'/cabecalhoAluno.php');
             </div>
             <div class="instituicao">
                 <label for="">Instituição:</label>
-                <h3><?=utf8_encode($row_curriculo['instituicao']);?></h3>
+                <h3><?=$row_curriculo['instituicao'];?></h3>
             </div>
             <div class="nivel">
                 <label for="">Nível:</label>
@@ -72,11 +72,11 @@ include_once(''.TEMPLATE_PATH.'/cabecalhoAluno.php');
             <h5>Experiencia</h5>
             <div class="empresa">
                 <label for="">Empresa:</label>
-                <h3><?=utf8_encode($row_curriculo['empresa']);?></h3>
+                <h3><?=$row_curriculo['empresa'];?></h3>
             </div>
             <div class="cargo-aluno">
                 <label for="">Cargo:</label>
-                <h3><?=utf8_encode($row_curriculo['cargo']);?></h3>
+                <h3><?=$row_curriculo['cargo'];?></h3>
             </div>
             <div class="data">
                 <label for="">Data Admissao:</label>
@@ -89,7 +89,7 @@ include_once(''.TEMPLATE_PATH.'/cabecalhoAluno.php');
             <h5>Curso Complementar</h5>
             <div class="curso_compl">
                 <label for="">Curso Complementar:</label>
-                <h3><?=utf8_encode($row_curriculo['curso']);?></h3>
+                <h3><?=$row_curriculo['curso'];?></h3>
             </div>
             <div class="duracao">
                 <label for="">Duração:</label>

@@ -50,9 +50,10 @@
 }
 .info-img{
     text-align: center;
+    margin-top: 1vh;
     width:100%;
 }
 .info-img img{
-    margin-top: 1vh;
+    margin-bottom: 3vh;
     width:80%;
 }

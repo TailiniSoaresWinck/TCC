@@ -50,13 +50,13 @@ include_once('../process/curso.php');
         <div class="conteudo">
             <label for="">Data de Início</label>
             <div class="control">
-                <input name="inicio" type="date" class="" placeholder="Inicio" maxlength='10' min="1960-07-11"  max="<?php echo date("Y-m-d");?>" autofocus required>
+                <input name="inicio" type="date" class="" placeholder="Inicio" maxlength='10' min="1960-07-11"   max="<?php echo date("Y-m-d");?>" autofocus required>
             </div>
         </div>
         <div class="conteudo">
             <label for="">Data de Formação</label>
             <div class="control">
-                <input name="fim" type="date" class="" placeholder="Fim" maxlength='10' min="1960-07-11" max="<?php echo date("Y-m-d");?>" autofocus required>
+                <input name="fim" type="date" class="" placeholder="Fim" maxlength='10' min="1960-07-11" autofocus required>
             </div>
         </div>
         <div class="conteudo">

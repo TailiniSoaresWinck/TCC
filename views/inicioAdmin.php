@@ -17,10 +17,14 @@ include_once(''.TEMPLATE_PATH.'/cabecalhoAdmin.php');
     </div>
     <div class="info-extra">
         <h3>Tenha o controle sobre quem está cadastrado no site!</h3>
+        <p>Tenha o controle sobre quem está cadastrado como empresa, e quem está cadastrado como aluno.
+            Adicione matrículas para que o aluno possa cadastrar-se no site.
+            Monitore de forma simples e fácil o site.
+        </p>
         <div class="info-img">
         <img src="<?php echo URL_IMG?>/inicioAdmin.jpg" alt="" srcset="">
         </div>
-        <p>Tenha acesso as empresas cadastradas e alunos, além de adicionar matrículas para alunos puderem se cadastrar!</p>
+
     </div>
 </body>
 </html>

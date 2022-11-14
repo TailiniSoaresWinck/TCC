@@ -64,8 +64,8 @@
     <?php
     }
     else{?>
-    <div class='sem-vagas'>
-        <h3>Sem vagas ainda</h3>
+    <div class="sem-vagas">
+            <p for="">Não há vagas ainda!</p>
     </div>
     <?php
     }

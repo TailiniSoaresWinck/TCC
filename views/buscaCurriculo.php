@@ -21,10 +21,14 @@ include_once(''.TEMPLATE_PATH.'/cabecalhoEmp.php');
     </div>
     <div class="info-extra">
         <h3>Encontre o melhor profissional para a vaga que você procura!</h3>
+        <p> Pratika CIMOL é uma plataforma para cadastro de currículos, onde você pode encontrar o profissional ideal para a vaga que você procura.
+         Tem por objetivo otimizar todo o processo de anunciar vagas, escolher candidatos e procurar perfis para sua empresa.
+             O sistema possui diversas funcionalidades e recursos que irão tornar o dia-a-dia dos gestores mais prática 
+             e simplificada. O sistema é totalmente web, ou seja, não é necessário instalar nenhum programa no computador.</p>
         <div class="info-img">
         <img src="<?php echo URL_IMG?>/buscarCurriculo.jpg" alt="" srcset="">
         </div>
-        <p>Selecione da melhor forma e com rapidez os perfis que você acredita ser adequados para a vaga!</p>
+        
     </div>
 </body>
 </html>

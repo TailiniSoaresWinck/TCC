@@ -49,7 +49,7 @@ include_once(''.TEMPLATE_PATH.'/cabecalhoAluno.php');
                             </div>
                             <div class="conteudo">
                                 <div class="control">
-                                    <input name="nivel" type="text" required  value="<?=$row_curriculo['nivel'];?>" autofocus>
+                                    <input name="nivel" type="text" required  value="<?=$row_curriculo['nivel'];?>"  autofocus>
                                 </div>
                             </div>
                             <div class="conteudo">
@@ -59,7 +59,7 @@ include_once(''.TEMPLATE_PATH.'/cabecalhoAluno.php');
                             </div>
                             <div class="conteudo">
                                 <div class="control">
-                                    <input name="fim" type="date"maxlength='10' min="1960-07-11"  max="<?php echo date("Y-m-d");?>"  required value="<?=$row_curriculo['fim'];?>" autofocus>
+                                    <input name="fim" type="date"maxlength='10' min="1960-07-11"   required value="<?=$row_curriculo['fim'];?>" autofocus>
                                 </div>
                             </div>
                             <div class="conteudo">
