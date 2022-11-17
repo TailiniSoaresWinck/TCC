@@ -1,5 +1,5 @@
 <?php
-define("DIR_PATH", "C:\\xampp\htdocs\\TCC");
+define("DIR_PATH", "https://pratikacimol.herokuapp.com");
 define("TEMPLATE_PATH", DIR_PATH."/template");
 define("URL_BASE", "https://pratikacimol.herokuapp.com");
 define("URL_TEMPLATE", URL_BASE . "/template");
