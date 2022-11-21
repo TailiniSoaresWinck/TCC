@@ -27,14 +27,14 @@ if($usuario == 'aluno'){
         $sql->execute();
         if($sql==true){
             $mail = new PHPMailer(true);
-            $assunto="Recuperar senha";
+            $assunto="Nova senha - Pratika CIMOL";
             $headers = "MIME-Version: 1.0\r\n";
             $headers .= "Content-type: text/html; charset=UTF-8\r\n";
             $mensagem = '<html><head>';
             $mensagem="
             <h2>Você solicitou uma nova senha?</h2>
             <hr>
-            <h1>Se sim, aqui está sua nova senha:<h1>
+            <p>Se sim, aqui está sua nova senha:<p>
             <p>Senha: '".$senha."'</p>
             </hr>
             </head></html>";
@@ -45,13 +45,13 @@ if($usuario == 'aluno'){
                 $mail->isSMTP();                                            //Send using SMTP
                 $mail->Host       = 'smtp.gmail.com';                    //Set the SMTP server to send through
                 $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-                $mail->Username   = 'tailinesoareswinck@gmail.com';                     //SMTP username
-                $mail->Password   = 'ecmiyixjylydfjwm';                               //SMTP password
+                $mail->Username   = 'pratikacimol@gmail.com';                     //SMTP username
+                $mail->Password   = 'knsrjmmwrpumsmop';                               //SMTP password
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         //Enable implicit TLS encryption
                 $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
     
                 //Recipients
-                $mail->setFrom('tailinesoareswinck@gmail.com');
+                $mail->setFrom('pratikacimol@gmail.com');
                 $mail->addAddress($email);     //Add a recipient
     
                 //Content
@@ -85,19 +85,19 @@ else if($usuario == 'empresa'){
     $sql->execute();
     $row = $sql->fetch(PDO::FETCH_ASSOC);
     if($row>0){
-        $senha = rand(10000, 99999);
+        $senha = rand(100000, 999999);
         $sql=$conn->query("UPDATE projeto.aluno SET senha='".md5($senha)."' WHERE email='$email'");
         $sql->execute();
         if($sql==true){
             $mail = new PHPMailer(true);
-            $assunto="Recuperar senha";
+            $assunto="Nova senha - Pratika CIMOL";
             $headers = "MIME-Version: 1.0\r\n";
             $headers .= "Content-type: text/html; charset=UTF-8\r\n";
             $mensagem = '<html><head>';
             $mensagem="
             <h2>Você solicitou uma nova senha?</h2>
             <hr>
-            <h1>Se sim, aqui está sua nova senha:<h1>
+            <p>Se sim, aqui está sua nova senha:<p>
             <p>Senha: '".$senha."'</p>
             </hr>
             </head></html>";
@@ -108,13 +108,13 @@ else if($usuario == 'empresa'){
                 $mail->isSMTP();                                            //Send using SMTP
                 $mail->Host       = 'smtp.gmail.com';                    //Set the SMTP server to send through
                 $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-                $mail->Username   = 'tailinesoareswinck@gmail.com';                     //SMTP username
-                $mail->Password   = 'ecmiyixjylydfjwm';                               //SMTP password
+                $mail->Username   = 'pratikacimol@gmail.com';                     //SMTP username
+                $mail->Password   = 'knsrjmmwrpumsmop';                               //SMTP password
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         //Enable implicit TLS encryption
                 $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
     
                 //Recipients
-                $mail->setFrom('tailinesoareswinck@gmail.com');
+                $mail->setFrom('pratikacimol@gmail.com');
                 $mail->addAddress($email);     //Add a recipient
     
                 //Content
@@ -148,19 +148,19 @@ elseif($usuario == 'administrador'){
     $sql->execute();
     $row = $sql->fetch(PDO::FETCH_ASSOC);
     if($row>0){
-        $senha = rand(10000, 99999);
+        $senha = rand(100000, 999999);
         $sql=$conn->query("UPDATE projeto.aluno SET senha='".md5($senha)."' WHERE email='$email'");
         $sql->execute();
         if($sql==true){
             $mail = new PHPMailer(true);
-            $assunto="Recuperar senha";
+            $assunto="Nova senha - Pratika CIMOL";
             $headers = "MIME-Version: 1.0\r\n";
             $headers .= "Content-type: text/html; charset=UTF-8\r\n";
             $mensagem = '<html><head>';
             $mensagem="
             <h2>Você solicitou uma nova senha?</h2>
             <hr>
-            <h1>Se sim, aqui está sua nova senha:<h1>
+            <p>Se sim, aqui está sua nova senha:<p>
             <p>Senha: '".$senha."'</p>
             </hr>
             </head></html>";
@@ -171,13 +171,13 @@ elseif($usuario == 'administrador'){
                 $mail->isSMTP();                                            //Send using SMTP
                 $mail->Host       = 'smtp.gmail.com';                    //Set the SMTP server to send through
                 $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-                $mail->Username   = 'tailinesoareswinck@gmail.com';                     //SMTP username
-                $mail->Password   = 'ecmiyixjylydfjwm';                               //SMTP password
+                $mail->Username   = 'pratikacimol@gmail.com';                     //SMTP username
+                $mail->Password   = 'knsrjmmwrpumsmop';                               //SMTP password
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         //Enable implicit TLS encryption
                 $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
     
                 //Recipients
-                $mail->setFrom('tailinesoareswinck@gmail.com');
+                $mail->setFrom('pratikacimol@gmail.com');
                 $mail->addAddress($email);     //Add a recipient
     
                 //Content
