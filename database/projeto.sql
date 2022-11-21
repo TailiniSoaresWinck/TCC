@@ -1,5 +1,5 @@
-CREATE DATABASE projeto CHARACTER SET utf8 COLLATE utf8_general_ci;
-use projeto;
+CREATE DATABASE pratika_cimol CHARACTER SET utf8 COLLATE utf8_general_ci;
+use pratika_cimol;
 CREATE TABLE administrador(
 	id int not null auto_increment primary key,
     nome varchar(100),
